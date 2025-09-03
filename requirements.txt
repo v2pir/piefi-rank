@@ -1,5 +1,4 @@
 moviepy==1.0.3
-ffmpeg-python==0.2.0
 
 openai-whisper
 
@@ -7,10 +6,7 @@ torch==2.2.2
 torchaudio==2.2.2
 torchvision==0.17.2
 
-numpy
-pillow
 tqdm
 
-uvicorn
 fastapi
 python-multipart
