@@ -2,7 +2,7 @@
   "tasks": [
     {
       "id": 1,
-      "description": "I created the UI of a simple website in around two days using AI.",
+      "description": "I designed and created the UI of a simple website over two days using AI tools.",
       "time_taken": 2,
       "difficulty": 30,
       "rank": 3
@@ -18,7 +18,7 @@
       "id": 3,
       "description": "I built 4 houses",
       "time_taken": 2,
-      "difficulty": 80,
+      "difficulty": 90,
       "rank": 2
     },
     {

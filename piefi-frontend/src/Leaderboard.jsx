@@ -15,7 +15,7 @@ const Leaderboard = () => {
       setTasks(data.tasks || []);
       setError(null);
     } catch (err) {
-      setError('Failed to load leaderboard. Make sure your backend is running on localhost:8000');
+      setError('Failed to load leaderboard. Make sure your backend is running.');
     } finally {
       setLoading(false);
     }

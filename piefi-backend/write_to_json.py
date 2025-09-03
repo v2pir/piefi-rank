@@ -6,7 +6,7 @@ def summarize(task_id=1):
     with open("/tmp/transcription.txt", "r") as f:
         transcript = f.read()
 
-    with open("/tmp/tasks.json", "r") as f:
+    with open("tmp/tasks.json", "r") as f:
         tasks = json.load(f)
 
     tasks_str = json.dumps(tasks, indent=2)
@@ -39,5 +39,5 @@ def summarize(task_id=1):
 
     text = json.dumps(updated_json, indent=2)
 
-    with open("/tmp/tasks.json", "w") as f:
+    with open("tmp/tasks.json", "w") as f:
         f.write(text)

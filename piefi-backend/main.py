@@ -22,7 +22,7 @@ app.add_middleware(
 )
 
 # Path to your tasks JSON file
-TASKS_FILE = "/tmp/tasks.json"
+TASKS_FILE = "tmp/tasks.json"
 
 def load_tasks() -> Dict[str, Any]:
     """Load tasks from JSON file"""
@@ -83,9 +83,18 @@ async def upload_video(file: UploadFile = File(...)):
         if not file.content_type.startswith('video/'):
             raise HTTPException(status_code=400, detail="File must be a video")
         
+        for filename in os.listdir("tmp"):
+            if filename.endswith(".mp4"):
+                file_path = os.path.join("tmp", filename)
+                try:
+                    os.remove(file_path)
+                    print(f"Deleted: {file_path}")
+                except OSError as e:
+                    print(f"Error deleting {file_path}: {e}")
+        
         # Generate unique filename in /tmp for Vercel compatibility
         file_id = str(uuid.uuid4())
-        video_path = f"/tmp/{file_id}_{file.filename}"
+        video_path = f"tmp/{file_id}_{file.filename}"
         
         # Save uploaded video to /tmp
         with open(video_path, "wb") as buffer:
@@ -115,3 +124,7 @@ async def reset_leaderboard():
         return {"message": "Leaderboard reset successfully"}
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error resetting leaderboard: {str(e)}")
+    
+# if __name__ == "__main__":
+#     import uvicorn # Run the server 
+#     uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)

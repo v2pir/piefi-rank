@@ -5,7 +5,7 @@ import os
 def transcribe(myvid):
     # Extract audio from video
     video = mp.VideoFileClip(myvid)
-    audio_path = "/tmp/audio.wav"  # Use /tmp for Vercel
+    audio_path = "tmp/audio.wav"  # Use /tmp for Vercel
     video.audio.write_audiofile(audio_path)
     video.close()  # Clean up video object
     
@@ -19,7 +19,7 @@ def transcribe(myvid):
         )
     
     # Save transcription
-    transcription_path = "/tmp/transcription.txt"  # Use /tmp for Vercel
+    transcription_path = "tmp/transcription.txt"  # Use /tmp for Vercel
     with open(transcription_path, "w") as f:
         f.write(transcript.text)
     
