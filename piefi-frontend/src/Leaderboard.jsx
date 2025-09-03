@@ -7,7 +7,7 @@ const Leaderboard = () => {
 
   const loadLeaderboard = async () => {
     try {
-      const response = await fetch('/api/leaderboard');
+      const response = await fetch('https://piefi-rank.onrender.com/api/leaderboard');
       if (!response.ok) {
         throw new Error('Failed to load leaderboard');
       }
