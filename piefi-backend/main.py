@@ -119,15 +119,3 @@ async def reset_leaderboard():
         return {"message": "Leaderboard reset successfully"}
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error resetting leaderboard: {str(e)}")
-
-if __name__ == "__main__":
-    import uvicorn
-    
-    # Run the server
-    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
-
-# To run this server:
-# 1. Install dependencies: pip install fastapi uvicorn python-multipart
-# 2. Replace run_background_pipeline() with your actual pipeline functions
-# 3. Run: python main.py
-# 4. API will be available at http://localhost:8000
