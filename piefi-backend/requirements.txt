@@ -4,3 +4,4 @@ tqdm
 
 fastapi
 python-multipart
+uvicorn
