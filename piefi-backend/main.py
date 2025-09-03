@@ -83,14 +83,11 @@ async def upload_video(file: UploadFile = File(...)):
         if not file.content_type.startswith('video/'):
             raise HTTPException(status_code=400, detail="File must be a video")
         
-        # Generate unique filename
+        # Generate unique filename in /tmp for Vercel compatibility
         file_id = str(uuid.uuid4())
-        video_path = f"tmp/{file_id}_{file.filename}"
+        video_path = f"/tmp/{file_id}_{file.filename}"
         
-        # Create uploads directory if it doesn't exist
-        os.makedirs("tmp", exist_ok=True)
-        
-        # Save uploaded video
+        # Save uploaded video to /tmp
         with open(video_path, "wb") as buffer:
             content = await file.read()
             buffer.write(content)
