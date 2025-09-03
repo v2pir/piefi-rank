@@ -1,6 +1,5 @@
 from fastapi import FastAPI, File, UploadFile, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
 import json
 import os
 import asyncio
@@ -86,10 +85,10 @@ async def upload_video(file: UploadFile = File(...)):
         
         # Generate unique filename
         file_id = str(uuid.uuid4())
-        video_path = f"uploads/{file_id}_{file.filename}"
+        video_path = f"tmp/{file_id}_{file.filename}"
         
         # Create uploads directory if it doesn't exist
-        os.makedirs("uploads", exist_ok=True)
+        os.makedirs("tmp", exist_ok=True)
         
         # Save uploaded video
         with open(video_path, "wb") as buffer:
