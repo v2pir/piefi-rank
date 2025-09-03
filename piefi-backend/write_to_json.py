@@ -3,7 +3,7 @@ from client import client
 
 def summarize(task_id=1):
 
-    with open("/tmp/transcription.txt", "r") as f:
+    with open("tmp/transcription.txt", "r") as f:
         transcript = f.read()
 
     with open("tmp/tasks.json", "r") as f:
