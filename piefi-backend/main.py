@@ -22,7 +22,7 @@ app.add_middleware(
 )
 
 # Path to your tasks JSON file
-TASKS_FILE = "tasks.json"
+TASKS_FILE = "/tmp/tasks.json"
 
 def load_tasks() -> Dict[str, Any]:
     """Load tasks from JSON file"""

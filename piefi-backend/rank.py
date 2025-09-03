@@ -3,10 +3,8 @@ from client import client
 
 def rank():
 
-    with open("tasks.json", "r") as f:
+    with open("/tmp/tasks.json", "r") as f:
         data = json.load(f)
-
-    f.close()
 
     tasks_str = json.dumps(data, indent=2)
 
@@ -51,7 +49,5 @@ def rank():
 
     text = json.dumps(updated_json, indent=2)
 
-    with open("tasks.json", "w") as f:
+    with open("/tmp/tasks.json", "w") as f:
         f.write(text)
-
-    f.close()
