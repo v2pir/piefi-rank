@@ -1,0 +1,32 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "description": "I created the UI of a simple website in around two days using AI.",
+      "time_taken": 2,
+      "difficulty": 30,
+      "rank": 3
+    },
+    {
+      "id": 2,
+      "description": "I created a car in 2 days",
+      "time_taken": 2,
+      "difficulty": 95,
+      "rank": 1
+    },
+    {
+      "id": 3,
+      "description": "I built 4 houses",
+      "time_taken": 2,
+      "difficulty": 80,
+      "rank": 2
+    },
+    {
+      "id": 4,
+      "description": "I baked a cookie",
+      "time_taken": 2,
+      "difficulty": 10,
+      "rank": 4
+    }
+  ]
+}
