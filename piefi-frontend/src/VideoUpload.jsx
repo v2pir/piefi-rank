@@ -23,7 +23,7 @@ const VideoUpload = ({ onUploadSuccess }) => {
       const formData = new FormData();
       formData.append('file', file);
 
-      const response = await fetch('http://localhost:8000/api/upload-video', {
+      const response = await fetch('/api/upload-video', {
         method: 'POST',
         body: formData
       });

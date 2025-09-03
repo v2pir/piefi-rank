@@ -1,0 +1,26 @@
+{
+  "builds": [
+    {
+      "src": "piefi-frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build"
+      }
+    },
+    {
+      "src": "piefi-backend/main.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/piefi-backend/main.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/piefi-frontend/build/index.html"
+    }
+  ],
+  "outputDirectory": "piefi-frontend/build"
+}
